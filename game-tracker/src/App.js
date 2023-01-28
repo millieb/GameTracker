@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './App.scss';
+import NavigationBar from './Components/UI/NavBar/NavBar';
 import GameList from './Components/GameList/GameList';
+import { ThemeProvider } from "@material-tailwind/react";
 
 function App() {
   const [gameLibrary, setGameLibrary] = useState([
@@ -19,11 +21,14 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <section id="games-list">
-        {content}
-      </section>
-    </div>
+    <ThemeProvider >
+      <div className="App">
+        <NavigationBar />
+        <section id="games-list">
+          {content}
+        </section>
+      </div>
+    </ThemeProvider>
   );
 }
 
